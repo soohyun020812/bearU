@@ -1,0 +1,72 @@
+네번째 강의시간입니다.
+오늘은 개발에 있어 필수적이며 아주 중요한 Git에 대해 들을 수 있었어요.
+저도 처음 사용했을 때 굉장히 어려워 했었던 부분인데 이렇게 강의를 들으며 정리해보니 엄청 쉬워서 다행이에요.
+생각난 김에 오늘 오랜만에 commit를 해야겠단 생각이 들었어요 ;)
+
+4강. Git + GitHub 나의 소스코드를 관리해보자
+'깃과 깃허브로 소스코드를 관리해본다.'
+
+Git
+1. 파일의 변경 사항을 추적 및 관리
+2. 개발프로젝트의 버전을 손쉽게 관리
+3. 기본적으로 로컬(사용자의 컴퓨터)을 저장소로 사용
+
+GitHub
+1. 원격으로 Git 저장소를 제공해주는 서비스
+2. 공개(Public), 비공개(Private) 저장소로 설정 가능
+3. 협업 시 프로젝트 소스의 서버 역할을 함
+4. 다른 원격 저장소로는 Gitlab, bitbucket 등이 있음
+
+사진 설명을 입력하세요.
+
+
+GitHub 사용법
+(Git의 소스관리가 이루어지고 있는 가정하에)
+1. remote 명령어를 사용하여 최초의 프로젝트를 원격저장소에 연결
+or 저장소에 있는 프로젝트를 가져오고 싶을 땐 clone 명령어 사용
+2. 소스 업데이트 시 push 명령어, 업데이트 된 소스를 가져올 땐 pull 명령어 사용
+
+Git 설치
+1. Git 다운로드 : 구글에 Git를 검색 후 상단의 Git를 클릭
+link : https://git-scm.com/
+2. 홈페이지에 중앙에 나와있는 Download for Windows를 클릭
+3. 설치 파일 실행 중 나오게 되는 창의 체크표시는 필요에 따라 체크 후 Next 버튼 누른 후 Install
+
+GitHub 설치
+1. GitHub 다운로드 : 구글에 GitHub를 검색 후 상단의 GitHub: Let's build from here · GitHub를 클릭
+link : https://github.com/
+2. 오른쪽 상단의 Sign up 버튼 클릭 후 회원가입 진행
+3. 회원가입을 마친 후 Login 진행
+= 원격저장소인 Repositories 확인 가능
+
+Git에 연결 방법
+1. 해당 프로젝트 파일을 열어서 [git init] 작성
+2. VSCode 파일 이름이 초록색과 오른쪽의 U라는 표시 확인 후 해당 폴더에 가보면 숨겨진 .git 폴더 확인
+(숨김 속성을 체크 해야 확인할 수 있음)
+3. VSCode에 [git add + 해당 파일이름] = 해당 파일 추적
+or [git add .] = 해당 프로젝트 추적
+(.gitignore 파일에 민감한 정보가 담긴 (.env)파일들 등록)
+4. 코드를 수정하지 않고 Git에 commit 진행을 위해 [git commit -m "첫 커밋!"] 입력 후 Enter
+5. 파일안에 새로운 코드 추가 시 VSCode가 Git를 추적하고 있어서 M(Modify)으로 파일 옆에 나타남
+6. commit 진행하고 싶을 경우 3, 4번의 순서 재실행
+
+GitHub에 연결 방법
+1. 아까 가입한 GitHub 중앙의 Repositories 클릭
+2. 오른쪽 상단의 New 클릭하여 새 원격저장소 생성
+3. Repository name 설정과 공개 여부 Public로 설정 후 Creat Repository
+4. 본인 저장소 확인 후 순서대로 나와있는 방법 중 git remote add origin 복사
+4. VSCode에 돌아와서 [git remote add origin http://github_repository_본인주소] 붙여넣기
+5. 기본 branch인 master로 먼저 올리기 위해 VSCode에 git push -u origin master 작성 후
+6. GitHub Login창이 나오면 ID, PW 입력 후 VSCode에 뜨는 창에 allow 클릭
+7. GitHub 홈페이지가 생성되면 Continue 누른 후 연결하여 Open
+8. 해당 저장소에서 F 누른 후 확인해보면 commit이 된 걸 확인할 수 있음
+
++ 다른 컴퓨터로 프로젝트를 가져오고 싶을 경우
+= 해당 저장소에 들어가서 오른쪽 초록색 부분의 Code를 클릭하게 되면 나타나는 주소와 git clone을 통해 사용할 수 있음
+
+<느낀점>
+Git를 처음 학원을 다니면서 써봤을 때는 다룰 줄 아는 사람이 별로 없어서 물어보거나 충돌이 날 경우 해결하기에 많은 어려움이 있었지만,
+이렇게 처음부터 정리하면서 배워간다면 나에게는 물론 다른 사람에게도 많은 도움을 줄 수 있는 강의라고 생각하였다.
+다음에 헷갈리는 부분이 있더라도 오늘 정리한 것 처럼 찾아서 배워가며 따로 기록하여서 당황하지 않을 수 있도록 Git를 충분히 또 공부해야겠다고 느꼈다 :)
+
+깨알 나의 GitHub link : https://github.com/soohyun020812

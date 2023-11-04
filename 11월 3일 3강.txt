@@ -1,0 +1,69 @@
+세번째 강의 시간입니다.
+본격적으로 개발에 들어가기 전 필요한 Python과 VSCode를 설치하고 세팅하는 내용에 대한 강의였습니다.
+저는 이미 둘 다 설치되어 있어서 복습 차원에서 설치에 대한 순서만 따로 요약하여 정리하였습니다.
+참고로 윈도우와 맥에선 터미널에서 적용하는 명령어가 조금 차이가 날 수 있어서 다른 분들이 하실 땐 구글에서 찾아서 참고하시면 좋을 것 같아요 :)
+
+3강 - 개발의 시작! 기본 셋팅 : Python + VSCode
+'모든 개발의 시작과 가장 중요한 프로젝트 초반세팅에 대해 배운다.'
+
+Python 설치
+1. Python 다운로드 : 구글에 Python을 검색 후 맨 위의 Welcome to Python.org를 클릭
+link : https://www.python.org/
+2. 홈페이지 상단 중앙의 Downloads를 눌러 Download Python을 클릭
+(Python 3.x로 시작하는 버전 중 가장 최신버전의 설치 파일을 내려받을 수 있다.)
+3. 다운로드 된 Python을 실행하여 [Install Now]를 클릭하기 전 하단의 [Add python.exe to PATH]를 클릭
+(파이썬이 어느 곳에서든 실행 될 수 있음을 표시)
+
+Python 설치 확인
+1. 바탕화면에 와서 Shift + 마우스 우클릭을 하여 '여기에 PowerShell 창 열기' 클릭
+(없을 경우 여기서 코멘드 창 열기 or 여기서 터미널 열기 클릭)
+2. 열린 Windows PowerShell에 Python을 입력 후 Enter
+3. 설치한 Python의 버전이 맞는 지 확인
+4. 버전 확인 후 exit()를 입력하면 초기 화면으로 나올 수 있음
+
+Python 실습
+1. 새로운 폴더를 생성
+ex) test 폴더
+2. 생성된 폴더 안에 메모장 생성
+ex) test.txt
+3. 생성 된 메모장 안에 print("안녕 베어유") 입력 후 저장
+4. 메모장에 저장 후 test.txt 라는 확장자 명을 test.py로 변경
+(py : Python의 확장자 명)
+5. 폴더 해당 경로로 Shift + 마우스 우클릭을 하여 '여기에 PowerShell 창 열기' 클릭
+6. 해당 경로로 Windows PowerShell이 열린 것을 확인 후 python test.py 입력
+7. test.py 안에 입력 된 [안녕 베어유]가 잘 출력되는 지 확인
+
+IDE 설치
+(Integrated Development Environment의 약자 : 통합 개발 환경)
+1. VS 다운로드 : 구글에 VSCode를 검색 후 맨 위의 Visual Studio Code - Code Editing. Redefined를 클릭
+link : https://code.visualstudio.com/
+2. 홈페이지에 나와있는 Download for Windows를 클릭
+3. 설치 파일 실행 중 나오게 되는 창의 하단 부분 [동의합니다] 체크
+4. VSCode 설치 경로 설정
+5. 추가 작업 선택 창에서 맨 밑의 하단 부분 [PATH 추가] 체크 후 설치
+6. 설치가 완료되었다면 Visual Studio Code 실행 체크 후 종료를 누르면 VSCode가 실행
+
++ IDE는 왜 설치할까?
+= 파일을 관리나 여러 자동완성이나 문법 오류를 잡아줄 수 있는 개발자에게 편리한 기능 제공
+
+VSCode 실습
+1. 상단의 File를 눌러 Open Folder 클릭
+2. 아까 작업한 test 폴더 선택
+3. 제대로 폴더가 불러와졌다면 아까 입력한 print("안녕 베어유")가 보임
+4. VSCode 터미널 실행 단축키
+= Ctrl + Shift + ~
+5. 열린 터미널에 python test.py 입력
+
+사진 설명을 입력하세요.
+
+VSCode 세팅
+1. 좌측 하단의 톱니바퀴 버튼 클릭
+2. Extentions에서 검색창에 Python 입력 후 설치
+3. 설치가 완료되었다면 VSCode 재실행을 통해 오른쪽 상단에 ▷모양의 버튼 생성
+4. 터미널을 열 필요 없이 ▷모양의 버튼을 통해 바로 실행할 수 있음
+
+사진 설명을 입력하세요.
+
+<느낀점>
+초반에 개발 환경 세팅에 혼자 했었을 때 혼자서 이것 저것 몰라서 찾아보면서 오랜 시간이 걸렸었지만, 이번 빡공단 Django 수업 10분만 들으면 어느 누구도 쉽게 할 수 있겠다란 생각이 들었습니다.
+처음 코딩에 입문하고픈 주변 사람이 있다면 이 강의를 추천해주면 좋겠다란 생각과 기존 환경 세팅을 요약하여 정리할 수 있었던 시간이였던 거 같습니다 :>
