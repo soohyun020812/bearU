@@ -1,0 +1,38 @@
+<!-- 
+    HTML의 작동 원리
+    <태그 속성 = 값 속성 값>
+        태그가 동작되는 영역
+    <태그>
+
+    HTML : 웹사이트의 뼈대
+    CSS : 웹사이트의 모양
+    JS : 웹사이트의 동적처리 (클릭, 스크롤, 키보드 ...)
+ -->
+
+ <!-- HTML의 기본 구성 -->
+ <html>
+    <!-- 문서의 정보를 담는 영역 -->
+    <head>
+        <title>베어유 실습 7강</title>
+        <link rel="=stylesheet" type="text/css" href="Python_1107.css"/>
+    </head>
+
+    <!-- 문서의 본문을 담는 영역 -->
+    <!-- HTML 하나의 요소 (Dom : Document Object Model) -->
+    <body>
+        <!-- <p class="content" style="white-space: pre-wrap;"> -->
+        <p class="content" id="content">
+            HTML - Hypertext Markup Language<br>
+            웹상에서 문서를 서로 교환하기 위해 만들어짐<br>
+            - 모양과 애니메이션을 문서에 표현할 수 있는 css<br>
+            - 문서에 동적인 요소를 만들어주는 js
+        </p>
+
+        <!-- 버튼을 누를 시 경고창이 활성화 -->
+        <button id="red_btn">빨간 버튼</button>
+        <button id="blue_btn">파란 버튼</button>
+        <button id="green_btn">초록 버튼</button>
+
+        <script src="Python_1107.js"></script>
+    </body>
+ </html>
