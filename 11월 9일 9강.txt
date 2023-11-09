@@ -1,0 +1,35 @@
+9강에서는 Django의 기본 구성에 대해 배웠다. MVT 구조를 레스토랑에 비유하여 설명하여 주시니 이해가 더 잘 되는 것 같았다. (요리사는 View, 재료는 Model, 그릇은 Template 이라고...) 또한 프로젝트의 구성에 대해서도 학습 하였는데 특히 그 중 manage.py 스크립트에 대한 설명을 자세히 해주셨다. 이 스크립트에 Django 프로젝트를 관리하기 위한 다양한 명령어들이 있는데 여기서 장고의 특징인 DDL을 사용하지 않고도 데이터베이스 테이블을 정의할 수 있는 makemigations(모델에 작성한 코드 기반으로 마이그레이션 파일 생성), migrate(마이그레이션 파일 기반으로 테이블 생성)의 대해 더 자세히 공부하였다. 이 외에도 manage.py의 다앙햔 명령어들을 알아야 할 필요가 )있을 것 같다.
+
+오늘은 Django의 기본 구성에 대해 알아보는 강의를 진행하였습니다.
+이해하기 쉬운 비유로 내용 숙지에 도움을 주셨습니다.
+
+9강. Django의 기본 구성 및 특징 어서오세요. Django 레스토랑입니다.
+'django의 기본 구성에 대해 배운다.'
+
+레스토랑 프로세스
+
+Django의 특징 (MVT)
+= MVT(Model-View-Template) 구조로 잡혀있는 프레임 워크
+1. 데이터 베이스를 제어하는 영역 (Model)
+2. 각종 로직을 처리하는 영역 (View)
+3. 사용자에게 보여지는 페이지 담당 영역 (Template)
+
+Django의 Project 구성
+
+manage.py
+= Django 프로젝트를 관리하기 위한 Script
+
+- makemigrations (app name) : migration 파일 생성
+- migrate (app name) : migration 적용
+- startapp (app name) : 새로운 django app 생성
+- collectstatic : 각종 정적 파일들(static 파일)들을 settings.STATIC_ROOT 경로로 모음
+- runserver : 개발 서버 실행
+- python manage.py --help : 지원하는 명령어 목록
+
++ 
+1. 데이터베이스 테이블을 만들 때 DDL을 사용
+2. django에서는 모델에 테이블을 정의하는 코드를 작성
+3. manage.py의 makemigrations 명령어를 실행
+4. 모델에 작성한 코드를 기반으로 migration 파일을 자동 생성
+5. 이후 migrate 명령어를 실행하면 생성된 migration 파일을 기반으로 자동으로 DDL을 전달
+(이 외의 다양한 명령어는 공식문서 참조)
