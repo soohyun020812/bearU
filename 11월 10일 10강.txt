@@ -1,0 +1,34 @@
+이번 강의시간에는 Database를 다루는 Django의 Model과 그를 매핑하는 ORM대해 알아보는 시간을 가졌습니다.
+이론 강의 시간은 대체로 짧아서 간단히 설명해주시는데, 이해하기 쉽게 설명해주셨습니다.
+
+10강. 요리재료 Model, 요리도구 ORM
+백엔드의 근간 Database를 다루는 Django의 Model과 그를 매핑하는 ORM대해 배운다.
+
+Model
+= Django라는 식당이 있다면 재료의 역할을 함
+
+1. 데이터베이스를 제어/관리하기 위한 영역
+2. models.py에 DB table을 하나의 class로 관리 (객체로 사용)]
+3. 각 모델 class 하나당 하나의 테이블이 서로 mapping
+4. migration 파일로 DB DDL 제어
+
+ORM (Object Relation Mapping)
+= Django라는 식당이 있다면 요리 도구의 역할을 함
+
+1. 객체와 데이터베이스의 데이터(테이블) 상호 연결
+2. SQL을 사용하지 않고 코드로 데이터 조작
+3. 생산성과 가독성이 좋아지지만 ORM에 대해 따로 공부가 필요
+
+Django ORM
+
+모든 레코드 조회 : model.objects.all()
+특정 조건 레코드 하나 조회 : model.objects.get(조건)
+특정 조건 레코드 전부 조회 : model.objects.filter(조건)
+조회 시 정렬 (all or filter) : model_set.order_by(필터)
+레코드 삽입 : model(값).save()
+레코드 삭제 : model.delete() #조회한 객체를 삭제
+레코드 수정 : model.변경필드 = 변경값, model.save()
+
+<느낀점>
+Django에서의 Model 역할, ORM의 정의 등에 대해 알아보고 이해할 수 있었습니다.
+models.py와 migration파일을 통하여 DDL을 조작할 수 있다는 것을 설명해주셔서 좋았습니다.
