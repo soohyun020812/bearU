@@ -1,0 +1,89 @@
+12강. Django + Postgresql + DBeaver 프로젝트 세팅
+'프로젝트를 구성하고, DBMS설치 및 데이터베이스 툴 DBeaver를 사용해본다.'
+
+Postgresql 설치
+1. 구글에 postgresql download를 검색
+link : https://www.postgresql.org/download/
+2. 사용자의 해당기기의 download를 눌러 빨간색의 Download the installer 클릭
+3. 버전별로 download가능 (12.7 version download)
+4. 설치가 완료되면 해당 postgresql 경로 지정과 체크박스는 그대로 유지
+5. 초기 DB의 PW 설정
+6. DB의 접근을 위해 필요한 Port번호 (postgresql 경우엔 Default 5432, 그대로 유지)
+7. 지역 설정, Default locale 그대로 유지 (한국으로 지정 시 레코드에서 한국시간으로 저장)
+8. Next 마무리 후 postgresql 설치 시작
+9. 설치가 완료되면 해당 체크박스는 풀어주고 Finish
+(해당 체크박스 무슨 내용인 지 아시는 분 있으시면 댓글 부탁드려요.. :)
+모르고 전 클릭 된 채 Finish 해버렸어요..)
+
+dbeaver 설치
+1. 구글에 dbeaver 검색 후 상단에 있는 DBeaver Community 클릭
+link : https://dbeaver.io/
+2. 메인 화면의 download를 클릭 후 Windows (installer) 설치
+3. 체크박스는 유지하고 다음을 클릭하며 설치
+4. Create Desktop Shortcut 체크박스 표시 후 마침
+
+익명 게시판 실습 시작
+1. VSCode 실행 후 새로운 폴더 생성 (폴더명 : anonymous)
+2. 터미널 실행 후 pip로 Django 설치 시작 전
+(전역으로 pip 패키지 설치 시 추후 경로 꼬임 발생 가능성 있음, 따라서 가상환경에서 pip 패키지 구성)
+3. 가상환경 설치
+= 터미널에 [python -m venv venv] 입력
+4. 가상환경 접근 법
+= venv 폴더 클릭 후 Scripts 클릭, 하단의 activate 파일에 들어가면 됨
+[venv\Scripts\activate] 입력
+
+<저는 VSCode에서 실행하다가 스크립트 파일을 실행할 수 없다는 에러가 발생했어요,
+찾아보니 PowerShell의 실행 정책 때문에 발생한 것이라고 하여서 실행 정책을 변경했습니다.
+1.PowerShell을 관리자 권한으로 실행
+2. 실행 정책 확인을 위한 명령어 입력 [Get-ExecutionPolicy]
++ 만약 "Restricted"가 나오면, 실행 정책이 제한되어 있는 것
+3. [Set-ExecutionPolicy RemoteSigned] 명령어 입력하여 실행 정책 변경을 위해 [Y] 입력
+4. 다시 스크립트 실행을 위해 [.\venv\Scripts\activate] 입력하니 되었어요>
+
+5. 가상 환경 접속 완료 후 나오고 싶을 때 [deactivate]
+
+VSCode에 접속하면 터미널 실행 시 저절로 가상환경에 접근 설정 방법
+1. F2 실행 후 상단에 Select Interpreter 검색
+2. Python Select Interpreter 클릭
+3. Enter interpreter path 클릭
+4. Find(찾기) 클릭 후 venv Scripts 안에 있는 python.exe를 Select Interpreter
+5. 터미널 끄고 [Ctrl + Shift + ~] 단축키 실행 시 활성화 되는 것을 확인할 수 있음
+
+Django 설치
+1. requirements.txt 파일 생성
+2. 생성한 파일에 django==3.2.4 (enter) psycopg2 입력 후 저장
+(하나는 버전을 명시, 하나는 버전을 명시하지 않음
+3. 터미널에 pip install -r requirements.txt 입력 후 Enter
+4. Lib 폴더 안에 django 설치된 것을 확인
+5. Django에서 기본적으로 제공해주는 틀 설치를 위해 터미널에 [django-admin startproject anonymous .] Enter
+= 설치와 프로젝트 생성 완료
++ 프로젝트 열기
+1. 터미널에 [python manage.py runserver 8000] 입력
+(8000은 Port 번호 의미)
+터미널에 [http://127.0.0.1:8000/]가 나타나면 Django 접속 성공
+
+DB 연결
+1. 켜져있는 Server를 [Ctrl + C]로 종료
+2. anontmous 폴더 안 settings 파일 클릭
+3. 76번째 줄 DATABASES 변수 안에 DB 설정
++ 작성되어 있는 sqlite3 대신 Postgresql을 사용할 것이기 때문에 해당 코드들 주석처리 후 코드 작성
+(사진 참고)
+4. anonymous라는 DB 생성
+5. 아까 설치한 dbeaver 실행
+6. 좌측 상단의 [새 데이터베이스 연결] 버튼 클릭
+7. PostgreSQL 클릭
+8. 다른 부분 수정 없이 Password에 [본인의 PW] 입력 후 완료
+9. DBeaver 마우스 우클릭을 통해 Create - Database 클릭
+10. Database name를 [anonymous] 설정
+
+<실수로 anonymous를 다른 경로로 만들어서 삭제하려다 잘못 눌러서 파일을 숨겨버렸어요,
+혹시 숨겨진 파일 찾는 법 아시는 분 댓글 부탁드려요... ;-( 못찾겠다 꽤꼬리..>
+
+11. VSCode로 넘어와서 Server 실행 [python manage.py runserver 8000] 입력
+12. You have 18 unapplied migration(s).를 해결하기 위해 [python manage.py migrate] 입력
+
+<느낀점>
+마지막 부분의 DBeaver 부분에서 실수가 났다.
+anonymous의 숨겨진 파일을 찾아서 삭제하고 새로 생성하려 했는데 못 찾겠어서 anonymous1을 새로 만들었지만 그 과정 중 경로가 꼬인 것 같다.
+다시 찾아서 해결하고 anonymous DB를 다시 생성하여 migrate를 완료해야겠다.
+초기 환경 부분이 제일 어렵지만 그만큼 제일 뿌듯하다.
