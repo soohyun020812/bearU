@@ -1,0 +1,22 @@
+14강. Templates 프로젝트 구성 : block, include, extends
+'서비스에 맞게 Template의 프로젝트 구성을 한다.'
+
+Templates 
+1. Templates로 새로운 폴더 생성
+2. anonymous의 settings.py 클릭하여 TEMPLATES 찾기 (58번째 줄)
+= APP_DIRS': True 의미 : 따로 설정하지 않아도 Template파일을 사용할 수 있게 함
+= 직관적으로 해당 Template의 파일을 관리하기 위하여 상단에 폴더 생성
+3. 'DIRS' : []안에 'templates' 작성
+4. Templates 폴더 안에 [index.html] 파일 생성
+5. urls.py에 강의 코드 작성 후 터미널에
+[python manage.py runserver 8000]
+6. 강의 순서대로 common, page, component 생성
+
+= component를 만들고 싶을 때는 : include
+= 부분 영역을 제어하게 만들고 싶을 때는 : block
+= block이 있는 어떤 html을 확장시켜서 사용하고 싶을 때는 : extends
+
+<느낀점>
+어제 13강에서 꼬인 부분을 거의 해결하였다!
+오늘 실습은 무난히 잘 따라간 거 같다.
+온라인으로 실습을 진행하고, 성공해 나아가니 엄청나게 뿌듯하다 :)
